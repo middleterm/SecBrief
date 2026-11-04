@@ -1,0 +1,22 @@
+# 환경 변수 및 비밀 정보
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# 개발 도구 및 운영체제
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 로그
+*.log
