@@ -1,1 +1,4 @@
 feedparser
+streamlit
+python-dotenv
+openai
