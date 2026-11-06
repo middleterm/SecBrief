@@ -49,7 +49,7 @@ def fetch_articles(rss_url: str, limit: int = 10) -> list[dict]:
             print("원인:", feed.bozo_exception)
             return []
 
-        for entry in feed.entries[:limit]:
+        for entry in feed.entries[:min(limit, 10)]:
 
             title = clean_content(entry.get("title") or "")
             link = (entry.get("link") or "").strip()
