@@ -74,7 +74,10 @@ CSV의 열 순서는 `title, link, date, content, source`이다. 기존 4열 CSV
 - `feedparser`로 RSS를 읽는다.
 - KISA 보호나라와 The Hacker News RSS 주소를 보관한다.
 - 선택한 RSS 출처 이름을 기사 딕셔너리의 `source`에 저장한다.
-- 기사 제목과 내용을 정리하고 HTML 태그를 제거한다.
+- `summary`, `description`, `content` 순서로 RSS 본문을 확인한다.
+- RSS 본문이 없으면 `requests`와 `BeautifulSoup`으로 원문을 읽는다.
+- KISA 공지는 개요·설명·영향 제품·해결 방안을 추출하고, 일반 뉴스는 본문 앞부분을 추출한다.
+- 메뉴·광고·문의 문구와 HTML 태그를 제거한다.
 - 제목이나 링크가 없는 항목은 저장하지 않는다.
 - 수집 실패 시 빈 리스트를 반환하고 오류 내용을 출력한다.
 
@@ -92,6 +95,7 @@ articles = fetch_articles(
 - `save_articles()`는 링크를 비교해 같은 기사를 한 번만 CSV에 저장한다.
 - `load_articles()`는 CSV를 기사 딕셔너리 리스트로 읽는다.
 - 기존 4열 CSV도 읽어 기사 데이터 유실을 막고 `source`만 기본값으로 보완한다.
+- 기존 기사에 내용이 없으면 새로 수집한 본문으로 해당 행만 갱신한다.
 - `save_keywords()`는 사용자 키워드를 TXT 파일에 한 줄씩 쓴다.
 - `load_keywords()`는 TXT 파일을 한 줄씩 읽는다.
 - 파일이 아직 없으면 빈 리스트를 반환한다.
@@ -127,6 +131,8 @@ Streamlit 화면에서 다음 기능을 제공한다.
 6. 전체 기사 수와 검색 결과 수 표시
 7. 기사 제목, 발행일, 출처, 내용, 원문 링크 표시
 8. 키워드별 기사 수와 막대그래프 표시
+
+기사 수집 버튼을 누르면 내용이 없는 기존 기사도 원문에서 본문을 다시 확인한다.
 
 그래프는 맑은 고딕을 사용하며, 세로축을 0부터 정수 단위로 표시한다. 일치하는 기사가 없으면 빈 그래프 대신 안내 문구를 보여 준다.
 
@@ -171,6 +177,8 @@ python -m unittest discover -s tests -v
 feedparser
 streamlit
 matplotlib
+requests
+beautifulsoup4
 ```
 
 AI 요약을 제거했으므로 `openai`와 `python-dotenv`는 설치하지 않는다.
@@ -180,6 +188,7 @@ AI 요약을 제거했으므로 `openai`와 `python-dotenv`는 설치하지 않�
 - 클래스, 데이터베이스, AI API를 사용하지 않는다.
 - 리스트, 딕셔너리, `for`, `if`, 함수, `try/except`를 중심으로 작성한다.
 - CSV는 `csv.reader()`와 `csv.writer()`를 사용한다.
+- AI API 없이 RSS와 원문 HTML에서 기사 본문을 수집한다.
 - 사용자 입력 키워드는 공백을 제거하고 빈 값은 저장하지 않는다.
 - 원문 링크를 기사 중복 판단 기준으로 사용한다.
 - RSS와 파일 오류가 발생해도 앱 전체가 종료되지 않도록 안내한다.

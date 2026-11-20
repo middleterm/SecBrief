@@ -30,6 +30,35 @@ class StorageTest(unittest.TestCase):
         self.assertEqual(added_count, 1)
         self.assertTrue(fake_file.called)
 
+    def test_empty_existing_article_is_updated_with_new_content(self):
+        old_articles = [
+            {
+                "title": "기사",
+                "link": "https://example.com/1",
+                "date": "오늘",
+                "content": "내용 없음",
+                "source": "KISA 보호나라",
+            }
+        ]
+        new_articles = [
+            {
+                "title": "기사",
+                "link": "https://example.com/1",
+                "date": "오늘",
+                "content": "새 본문",
+                "source": "KISA 보호나라",
+            }
+        ]
+        fake_file = mock_open()
+
+        with patch.object(storage, "load_articles", return_value=old_articles), patch.object(
+            storage, "ensure_data_folder"
+        ), patch("storage.open", fake_file):
+            changed_count = storage.save_articles(new_articles)
+
+        self.assertEqual(changed_count, 1)
+        self.assertEqual(old_articles[0]["content"], "새 본문")
+
     def test_keywords_are_saved_without_case_duplicates(self):
         fake_file = mock_open()
 
