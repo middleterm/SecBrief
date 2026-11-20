@@ -8,7 +8,14 @@ from recommender import (
     filter_articles,
     get_keywords,
 )
-from storage import load_articles, load_keywords, save_articles, save_keywords
+from storage import (
+    load_articles,
+    load_keywords,
+    load_memos,
+    save_articles,
+    save_keywords,
+    save_memos,
+)
 
 
 # 한글 제목과 축 이름이 깨지지 않도록 맑은 고딕을 사용한다.
@@ -70,6 +77,9 @@ if "articles" not in st.session_state:
 
 if "keywords" not in st.session_state:
     st.session_state.keywords = load_keywords()
+
+if "memos" not in st.session_state:
+    st.session_state.memos = load_memos()
 
 if "selected_link" not in st.session_state:
     st.session_state.selected_link = ""
@@ -340,9 +350,31 @@ if bottom_mode == "기사 통계":
         st.metric("현재 분야 기사", len(filtered_articles))
         st.metric("현재 수집 출처", selected_source_name)
 else:
-    st.text_area(
-        "학습 메모",
-        key="learning_memo",
-        height=360,
-        placeholder="기사에서 새롭게 알게 된 내용을 자유롭게 기록하세요.",
-    )
+    if selected_article is None:
+        st.info("메모를 작성할 기사를 먼저 선택하세요.")
+    else:
+        memo_key = "learning_memo_" + selected_article["link"]
+        if memo_key not in st.session_state:
+            st.session_state[memo_key] = st.session_state.memos.get(
+                selected_article["link"], ""
+            )
+
+        memo_column, save_column = st.columns([5, 1])
+        with memo_column:
+            st.text_area(
+                "학습 메모",
+                key=memo_key,
+                height=360,
+                placeholder="기사에서 새롭게 알게 된 내용을 자유롭게 기록하세요.",
+            )
+
+        with save_column:
+            st.caption("저장 위치: data/memos.csv")
+            if st.button("메모 저장"):
+                st.session_state.memos[selected_article["link"]] = st.session_state[
+                    memo_key
+                ]
+                if save_memos(st.session_state.memos):
+                    st.success("메모를 저장했습니다.")
+                else:
+                    st.error("메모를 저장하지 못했습니다.")

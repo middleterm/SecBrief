@@ -1,11 +1,704 @@
-title,link,date,content,source
-Oracle 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72313,2026-11-18,내용 없음,KISA 보호나라
-Citrix 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72312,2026-11-17,내용 없음,KISA 보호나라
-Check Point 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72311,2026-11-17,내용 없음,KISA 보호나라
-PostgreSQL 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72310,2026-11-17,내용 없음,KISA 보호나라
-MongoDB 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72309,2026-11-17,내용 없음,KISA 보호나라
-Fortinet 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72308,2026-11-16,내용 없음,KISA 보호나라
-Git 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72307,2026-11-16,내용 없음,KISA 보호나라
-Vates 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72306,2026-11-13,내용 없음,KISA 보호나라
-Apache 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72304,2026-11-12,내용 없음,KISA 보호나라
-WordPress 플러그인 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72303,2026-11-12,내용 없음,KISA 보호나라
+﻿title,link,date,content,source
+Oracle 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72313,2026-11-18,"□ 개요 o Oracle社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o Oracle Java SE, Oracle JavaFX의 libxml2에서 발생하는 XML 외부 엔티티(XXE) 주입 및 SSRF 취약점(CVE-2026-86144) [1][2] o Oracle Java SE의 Compiler에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-114938) [1][3] o Oracle Java SE의 JGSS에서 발생하는 정보 노출 및 데이터 변조 취약점(CVE-2026-114939) [1][4] o Oracle Java SE의 JSSE에서 발생하는 정보 노출 및 데이터 변조 취약점(CVE-2026-114940) [1][5] o Oracle Java SE의 Compiler에서 발생하는 서비스 거부 및 데이터 변조 취약점(CVE-2026-114941) [1][6] o Oracle Java SE의 Libraries에서 발생하는 서비스 거부 및 데이터 변조 취약점(CVE-2026-114942) [1][7]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-86144 | Oracle Java SE | 8u511b33 | 8u513 (1.8.0_513-b04)
+CVE-2026-86144 | Oracle JavaFX | 21.0.13 | 21.0.13.1
+CVE-2026-86144 | Oracle JavaFX | 25.0.5 | 25.0.5.1
+CVE-2026-86144 | Oracle JavaFX | 27.0.1 | 27.0.1.1
+CVE-2026-114938 | Oracle Java SE | 8u511b33-perf | 8u513-perf (1.8.0_513-perf-b4)
+CVE-2026-114938 | Oracle Java SE | 17.0.21.0.3 | 17.0.21.1
+CVE-2026-114938 | Oracle Java SE | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114938 | Oracle Java SE | 25.0.5.0.3 | 25.0.5.1
+CVE-2026-114938 | Oracle Java SE | 27.0.1.0.3 | 27.0.1.1
+CVE-2026-114938 | Oracle GraalVM for JDK | 17.0.21.0.3 | 17.0.21.1
+CVE-2026-114938 | Oracle GraalVM for JDK | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114938 | Oracle GraalVM Enterprise Edition | 21.3.20.0.3 | 21.3.20.1
+CVE-2026-114939 | Oracle Java SE | 8u511b33 | 8u513 (1.8.0_513-b04)
+CVE-2026-114939 | Oracle Java SE | 8u511b33-perf | 8u513-perf (1.8.0_513-perf-b4)
+CVE-2026-114939 | Oracle Java SE | 11.0.33.0.3 | 11.0.33.1
+CVE-2026-114939 | Oracle Java SE | 17.0.21.0.3 | 17.0.21.1
+CVE-2026-114939 | Oracle Java SE | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114939 | Oracle Java SE | 25.0.5.0.3 | 25.0.5.1
+CVE-2026-114939 | Oracle Java SE | 27.0.1.0.3 | 27.0.1.1
+CVE-2026-114939 | Oracle GraalVM for JDK | 17.0.21.0.3 | 17.0.21.1
+CVE-2026-114939 | Oracle GraalVM for JDK | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114939 | Oracle GraalVM Enterprise Edition | 21.3.20.0.3 | 21.3.20.1
+CVE-2026-114940 | Oracle Java SE | 8u511b33 | 8u513 (1.8.0_513-b04)
+CVE-2026-114940 | Oracle Java SE | 8u511b33-perf | 8u513-perf (1.8.0_513-perf-b4)
+CVE-2026-114940 | Oracle Java SE | 11.0.33.0.3 | 11.0.33.1
+CVE-2026-114940 | Oracle Java SE | 17.0.21.0.3 | 17.0.21.1
+CVE-2026-114940 | Oracle Java SE | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114940 | Oracle Java SE | 25.0.5.0.3 | 25.0.5.1
+CVE-2026-114940 | Oracle Java SE | 27.0.1.0.3 | 27.0.1.1
+CVE-2026-114940 | Oracle GraalVM for JDK | 17.0.21.0.3 | 17.0.21.1
+CVE-2026-114940 | Oracle GraalVM for JDK | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114940 | Oracle GraalVM Enterprise Edition | 21.3.20.0.3 | 21.3.20.1
+CVE-2026-114941 | Oracle Java SE | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114941 | Oracle Java SE | 25.0.5.0.3 | 25.0.5.1
+CVE-2026-114941 | Oracle Java SE | 27.0.1.0.3 | 27.0.1.1
+CVE-2026-114941 | Oracle GraalVM for JDK | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114942 | Oracle Java SE | 21.0.13.0.3 | 21.0.13.1
+CVE-2026-114942 | Oracle Java SE | 25.0.5.0.3 | 25.0.5.1
+CVE-2026-114942 | Oracle Java SE | 27.0.1.0.3 | 27.0.1.1
+CVE-2026-114942 | Oracle GraalVM for JDK | 21.0.13.0.3 | 21.0.13.1",KISA 보호나라
+Citrix 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72312,2026-11-17,"□ 개요 o Citrix社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[3] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o NetScaler ADC, NetScaler Gateway에서 발생하는 Improper Restriction of Operations within the Bounds of a Memory Buffer 취약점(CVE-2026-120868) [1][4] o NetScaler ADC, NetScaler Gateway에서 발생하는 Improper Restriction of Operations within the Bounds of a Memory Buffer 취약점(CVE-2026-107407) [1][5] o NetScaler ADC, NetScaler Gateway에서 발생하는 Out-of-bounds Write 취약점(CVE-2026-107408) [1][6] o NetScaler ADC, NetScaler Gateway에서 발생하는 Double Free 취약점(CVE-2026-107409) [1][7] o NetScaler ADC, NetScaler Gateway에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-107410) [1][8] o NetScaler ADC, NetScaler Gateway에서 발생하는 Improper Restriction of Operations within the Bounds of a Memory Buffer 취약점(CVE-2026-107412) [1][9] o NetScaler ADC, NetScaler Gateway에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-107415) [1][10] o NetScaler ADC, NetScaler Gateway에서 발생하는 Improper Restriction of Operations within the Bounds of a Memory Buffer 취약점(CVE-2026-120864) [1][11] o NetScaler Console에서 발생하는 Improper Authentication 취약점(CVE-2026-120869) [2][12] o NetScaler ADC, NetScaler Gateway에서 발생하는 Improper Restriction of Operations within the Bounds of a Memory Buffer 취약점(CVE-2026-111334) [1][13] o Secure Access Client for Windows에서 발생하는 Improper Privilege Management 취약점(CVE-2026-118268) [3][14]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-120868 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-120868 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-120868 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-120868 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-120868 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-120868 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-107407 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107407 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107407 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107407 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107407 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-107407 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-107408 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107408 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107408 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107408 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107408 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-107408 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-107409 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107409 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107409 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107409 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107409 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-107409 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-107410 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107410 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107410 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107410 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107410 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-107410 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-107412 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107412 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107412 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107412 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107412 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-107412 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-107415 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107415 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107415 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-107415 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-107415 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-107415 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-120864 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-120864 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-120864 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-120864 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-120864 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-120864 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-120869 | NetScaler Console | 14.1-74.34 미만 | 14.1-74.34 이상
+CVE-2026-111334 | NetScaler ADC | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-111334 | NetScaler ADC | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-111334 | NetScaler Gateway | 14.1-73.57 미만 | 14.1-73.57 이상
+CVE-2026-111334 | NetScaler Gateway | 13.1-64.39 미만 | 13.1-64.39 이상
+CVE-2026-111334 | NetScaler ADC (FIPS) | 14.1-73.58(FIPS) 미만 | 14.1-73.58(FIPS) 이상
+CVE-2026-111334 | NetScaler ADC (FIPS/NDcPP) | 13.1-37.293(FIPS/NDcPP) 미만 | 13.1-37.293(FIPS/NDcPP) 이상
+CVE-2026-118268 | Secure Access Client (Windows) | 26.11.1.6 미만 | 26.11.1.6 이상",KISA 보호나라
+Check Point 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72311,2026-11-17,"□ 개요 o Check Point社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o Check Point Force Firewall, Management Server, Log Server, Multi-Domain Security Management, Multi-Domain Log Server, Maestro Orchestrator에서 발생하는 Missing Authorization 취약점(CVE-2026-123039) [1][3] o Check Point Force Firewall, Spark Firewall, Cloud Firewall에서 발생하는 Improper Handling of Exceptional Conditions 취약점(CVE-2026-109618) [2][4] o Check Point Force Firewall, Spark Firewall, Cloud Firewall에서 발생하는 Use After Free 취약점(CVE-2026-109619) [2][5]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-123039 | Force Firewall | R82.20 Jumbo Hotfix Take 10 이하 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 | Management Server | R82.20 Jumbo Hotfix Take 10 이하 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 | Log Server | R82.20 Jumbo Hotfix Take 10 이하 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 | Multi-Domain Security Management | R82.20 Jumbo Hotfix Take 10 이하 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 | Multi-Domain Log Server | R82.20 Jumbo Hotfix Take 10 이하 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 | Maestro Orchestrator | R82.20 Jumbo Hotfix Take 10 이하 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-123039 | Force Firewall | R82.10 Jumbo Hotfix Take 50 이하 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 | Management Server | R82.10 Jumbo Hotfix Take 50 이하 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 | Log Server | R82.10 Jumbo Hotfix Take 50 이하 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 | Multi-Domain Security Management | R82.10 Jumbo Hotfix Take 50 이하 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 | Multi-Domain Log Server | R82.10 Jumbo Hotfix Take 50 이하 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 | Maestro Orchestrator | R82.10 Jumbo Hotfix Take 50 이하 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-123039 | Force Firewall | R82 Jumbo Hotfix Take 130 이하 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 | Management Server | R82 Jumbo Hotfix Take 130 이하 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 | Log Server | R82 Jumbo Hotfix Take 130 이하 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 | Multi-Domain Security Management | R82 Jumbo Hotfix Take 130 이하 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 | Multi-Domain Log Server | R82 Jumbo Hotfix Take 130 이하 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 | Maestro Orchestrator | R82 Jumbo Hotfix Take 130 이하 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-123039 | Force Firewall | R81.20 Jumbo Hotfix Take 173 이하 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 | Management Server | R81.20 Jumbo Hotfix Take 173 이하 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 | Log Server | R81.20 Jumbo Hotfix Take 173 이하 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 | Multi-Domain Security Management | R81.20 Jumbo Hotfix Take 173 이하 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 | Multi-Domain Log Server | R81.20 Jumbo Hotfix Take 173 이하 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 | Maestro Orchestrator | R81.20 Jumbo Hotfix Take 173 이하 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-123039 | Force Firewall | R81.10 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-123039 | Management Server | R81.10 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-123039 | Log Server | R81.10 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-123039 | Multi-Domain Security Management | R81.10 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-123039 | Multi-Domain Log Server | R81.10 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-123039 | Maestro Orchestrator | R81.10 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-109618 | Force Firewall | R82.20 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-109618 | Cloud Firewall | R82.20 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-109618 | Force Firewall | R82.10 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-109618 | Cloud Firewall | R82.10 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-109618 | Force Firewall | R82 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-109618 | Cloud Firewall | R82 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-109618 | Force Firewall | R81.20 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-109618 | Cloud Firewall | R81.20 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-109618 | Force Firewall | R81.10 | R81.10 Hotfix 적용
+CVE-2026-109618 | Cloud Firewall | R81.10 | R81.10 Hotfix 적용
+CVE-2026-109618 | Force Firewall | R81 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-109618 | Cloud Firewall | R81 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-109618 | Spark Firewall | R82.00.x | R82.00.11 Build 998002823 이상
+CVE-2026-109618 | Spark Firewall | R81.10.x | R81.10.17 Build 996004992 이상
+CVE-2026-109618 | Spark Firewall | R80.20.x 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-109619 | Force Firewall | R82.20 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-109619 | Cloud Firewall | R82.20 | R82.20 Jumbo Hotfix Take 14 이상
+CVE-2026-109619 | Force Firewall | R82.10 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-109619 | Cloud Firewall | R82.10 | R82.10 Jumbo Hotfix Take 52 이상
+CVE-2026-109619 | Force Firewall | R82 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-109619 | Cloud Firewall | R82 | R82 Jumbo Hotfix Take 132 이상
+CVE-2026-109619 | Force Firewall | R81.20 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-109619 | Cloud Firewall | R81.20 | R81.20 Jumbo Hotfix Take 174 이상
+CVE-2026-109619 | Force Firewall | R81.10 | R81.10 Hotfix 적용
+CVE-2026-109619 | Cloud Firewall | R81.10 | R81.10 Hotfix 적용
+CVE-2026-109619 | Force Firewall | R81 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-109619 | Cloud Firewall | R81 및 이전 버전 | 해결 버전으로 마이그레이션
+CVE-2026-109619 | Spark Firewall | R82.00.x | R82.00.11 Build 998002823 이상
+CVE-2026-109619 | Spark Firewall | R81.10.x | R81.10.17 Build 996004992 이상
+CVE-2026-109619 | Spark Firewall | R80.20.x 및 이전 버전 | 해결 버전으로 마이그레이션",KISA 보호나라
+PostgreSQL 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72310,2026-11-17,"□ 개요 o PostgreSQL 재단은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[25] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-6460) [1][26] o PostgreSQL에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-116317) [2][27] o PostgreSQL에서 발생하는 Use After Free 취약점(CVE-2026-116304) [3][28] o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-116306) [4][29] o PostgreSQL에서 발생하는 Use After Free 취약점(CVE-2026-116307) [5][30] o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-116309) [6][31] o PostgreSQL에서 발생하는 Improper Input Validation 취약점(CVE-2026-116314) [7][32] o PostgreSQL에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-116315) [8][33] o PostgreSQL에서 발생하는 SQL Injection 취약점(CVE-2026-116318) [9][34] o PostgreSQL에서 발생하는 Use After Free 취약점(CVE-2026-116319) [10][35] o PostgreSQL에서 발생하는 Use After Free 취약점(CVE-2026-116320) [11][36] o PostgreSQL에서 발생하는 Use After Free 취약점(CVE-2026-116323) [12][37] o PostgreSQL에서 발생하는 Integer Overflow or Wraparound 취약점(CVE-2026-116328) [13][38] o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-116329) [14][39] o PostgreSQL에서 발생하는 Inclusion of Functionality from Untrusted Control Sphere 취약점(CVE-2026-116330) [15][40] o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-116331) [16][41] o PostgreSQL에서 발생하는 Use After Free 취약점(CVE-2026-116332) [17][42] o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-116335) [18][43] o PostgreSQL에서 발생하는 Operation on a Resource after Expiration or Release 취약점(CVE-2026-116336) [19][44] o PostgreSQL에서 발생하는 Integer Overflow or Wraparound 취약점(CVE-2026-120139) [20][45] o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-120141) [21][46] o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-120142) [22][47] o PostgreSQL에서 발생하는 Use After Free 취약점(CVE-2026-120143) [23][48] o PostgreSQL에서 발생하는 Type Confusion 취약점(CVE-2026-120144) [24][49] o PostgreSQL에서 발생하는 Missing Authorization 취약점(CVE-2026-120145) [25][50]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-6460 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-6460 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-6460 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-6460 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-6460 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116317 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116317 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116317 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116317 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116317 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116304 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116304 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116304 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116304 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116304 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116306 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116306 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116306 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116306 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116306 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116307 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116307 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116307 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116307 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116307 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116309 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116309 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116309 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116309 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116309 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116314 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116314 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116314 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116314 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116314 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116315 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116315 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116315 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116315 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116315 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116318 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116319 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116319 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116319 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116319 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116319 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116320 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116320 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116320 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116320 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116320 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116323 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116323 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116323 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116323 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116323 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116328 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116328 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116328 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116329 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116330 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116330 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116330 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116330 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116330 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116331 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116331 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116331 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116331 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116331 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116332 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116332 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116332 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116332 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116332 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116335 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116335 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116335 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116335 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116335 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-116336 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-116336 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-116336 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-116336 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-116336 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-120139 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-120139 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-120139 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-120139 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-120139 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-120141 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-120141 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-120141 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-120141 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-120141 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-120142 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-120142 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-120143 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-120143 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-120143 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-120143 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-120143 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상
+CVE-2026-120144 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-120145 | PostgreSQL | 18 이상 18.7 미만 | 18.7 이상
+CVE-2026-120145 | PostgreSQL | 17 이상 17.12 미만 | 17.12 이상
+CVE-2026-120145 | PostgreSQL | 16 이상 16.16 미만 | 16.16 이상
+CVE-2026-120145 | PostgreSQL | 15 이상 15.20 미만 | 15.20 이상
+CVE-2026-120145 | PostgreSQL | 14 이상 14.25 미만 | 14.25 이상",KISA 보호나라
+MongoDB 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72309,2026-11-17,"□ 개요 o MongoDB社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o Node.js Driver에서 발생하는 Incorrect Behavior Order: Validate Before Canonicalize 취약점(CVE-2026-126837) [1]~[3]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-126837 | Node.js Driver | 3.3.3 이상 7.8.0 미만 | 7.8.0 이상",KISA 보호나라
+Fortinet 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72308,2026-11-16,"□ 개요 o Fortinet社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[14] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o FortiManager에서 발생하는 Improper Authorization 취약점(CVE-2026-126261) [1][15] o FortiAnalyzer, FortiManager에서 발생하는 SQL Injection 취약점(CVE-2026-126262) [2][16] o FortiAnalyzer, FortiAnalyzer Cloud, FortiManager, FortiManager Cloud에서 발생하는 Authentication Bypass by Spoofing 취약점(CVE-2026-126184) [3][17] o FortiAnalyzer, FortiAnalyzer Cloud, FortiManager, FortiManager Cloud에서 발생하는 Improper Certificate Validation 취약점(CVE-2026-126232) [4][18] o FortiOS에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-126259) [5][19] o FortiOS에서 발생하는 Authentication Bypass by Primary Weakness 취약점(CVE-2026-126253) [6][20] o FortiOS에서 발생하는 Out-of-bounds Read 취약점(CVE-2026-126256) [7][21] o FortiOS에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-126258) [8][22] o FortiOS에서 발생하는 Improper Certificate Validation 취약점(CVE-2026-121528) [9][23] o FortiAnalyzer, FortiAnalyzer Cloud, FortiAnalyzer-BigData, FortiManager, FortiManager Cloud에서 발생하는 Improper Encoding or Escaping of Output 취약점(CVE-2026-126170) [10][24] o FortiAnalyzer, FortiAnalyzer Cloud, FortiManager, FortiManager Cloud에서 발생하는 XML Injection 취약점(CVE-2026-126176) [11][25] o FortiAnalyzer, FortiAnalyzer Cloud, FortiManager, FortiManager Cloud에서 발생하는 XML Injection 취약점(CVE-2026-126177) [11][26] o FortiOS, FortiPAM에서 발생하는 Path Traversal 취약점(CVE-2026-126255) [12][27] o FortiManager에서 발생하는 Use of Hard-coded Credentials 취약점(CVE-2026-126181) [13][28] o FortiOS에서 발생하는 Numeric Truncation Error 취약점(CVE-2026-126254) [14][29]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-126261 | FortiManager | 7.2.0 이상 7.2.9 미만 | 7.2.9 이상
+CVE-2026-126261 | FortiManager | 7.4.0 이상 7.4.6 미만 | 7.4.6 이상
+CVE-2026-126261 | FortiManager | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126261 | FortiManager | 8.0.0 | 8.0.1 이상
+CVE-2026-126262 | FortiAnalyzer | 7.2.0 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126262 | FortiManager | 7.2.0 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126262 | FortiAnalyzer | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126262 | FortiManager | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126262 | FortiAnalyzer | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126262 | FortiManager | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126262 | FortiManager | 8.0.0 | 8.0.1 이상
+CVE-2026-126262 | FortiAnalyzer | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126184 | FortiAnalyzer | 7.2.0 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126184 | FortiManager | 7.2.0 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126184 | FortiAnalyzer Cloud | 7.2.1 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126184 | FortiManager Cloud | 7.2.1 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126184 | FortiAnalyzer | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126184 | FortiManager | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126184 | FortiAnalyzer Cloud | 7.4.1 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126184 | FortiManager Cloud | 7.4.1 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126184 | FortiAnalyzer | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126184 | FortiAnalyzer Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126184 | FortiManager | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126184 | FortiManager Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126184 | FortiAnalyzer | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126184 | FortiManager | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126184 | FortiAnalyzer Cloud | 8.0.1 | 8.0.2 이상
+CVE-2026-126184 | FortiManager Cloud | 8.0.1 | 8.0.2 이상
+CVE-2026-126232 | FortiAnalyzer | 7.2 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126232 | FortiAnalyzer Cloud | 7.2 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126232 | FortiManager | 7.2 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126232 | FortiManager Cloud | 7.2 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126232 | FortiAnalyzer | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126232 | FortiManager | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126232 | FortiAnalyzer Cloud | 7.4.1 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126232 | FortiManager Cloud | 7.4.1 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126232 | FortiAnalyzer | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126232 | FortiAnalyzer Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126232 | FortiManager | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126232 | FortiManager Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126232 | FortiAnalyzer | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126232 | FortiManager | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126232 | FortiAnalyzer Cloud | 8.0.1 | 8.0.2 이상
+CVE-2026-126232 | FortiManager Cloud | 8.0.1 | 8.0.2 이상
+CVE-2026-126259 | FortiOS | 7.0 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126259 | FortiOS | 7.2.0 이상 7.2.14 미만 | 7.2.14 이상
+CVE-2026-126259 | FortiOS | 7.4.0 이상 7.4.13 미만 | 7.4.13 이상
+CVE-2026-126259 | FortiOS | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126259 | FortiOS | 8.0.0 | 8.0.1 이상
+CVE-2026-126253 | FortiOS | 7.0.1 이상 7.0.19 이하 | 해결 버전으로 마이그레이션
+CVE-2026-126253 | FortiOS | 7.2.0 이상 7.2.14 미만 | 7.2.14 이상
+CVE-2026-126253 | FortiOS | 7.4.0 이상 7.4.13 미만 | 7.4.13 이상
+CVE-2026-126253 | FortiOS | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126253 | FortiOS | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126256 | FortiOS | 7.2.0 이상 7.2.14 미만 | 7.2.14 이상
+CVE-2026-126256 | FortiOS | 7.4.0 이상 7.4.13 미만 | 7.4.13 이상
+CVE-2026-126256 | FortiOS | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126256 | FortiOS | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126258 | FortiOS | 7.6.7 | 7.6.8 이상
+CVE-2026-126258 | FortiOS | 8.0.0 | 8.0.1 이상
+CVE-2026-121528 | FortiOS | 6.4 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-121528 | FortiOS | 7.0 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-121528 | FortiOS | 7.2.0 이상 7.2.14 미만 | 7.2.14 이상
+CVE-2026-121528 | FortiOS | 7.4.0 이상 7.4.10 미만 | 7.4.10 이상
+CVE-2026-121528 | FortiOS | 7.6.0 이상 7.6.5 미만 | 7.6.5 이상
+CVE-2026-126170 | FortiAnalyzer-BigData | 7.6.0 이상 7.6.3 미만 | 7.6.3 이상
+CVE-2026-126170 | FortiAnalyzer | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126170 | FortiAnalyzer Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126170 | FortiManager | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126170 | FortiManager Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126170 | FortiAnalyzer | 8.0.0 이상 8.0.3 미만 | 8.0.3 이상
+CVE-2026-126170 | FortiManager | 8.0.0 이상 8.0.3 미만 | 8.0.3 이상
+CVE-2026-126170 | FortiAnalyzer Cloud | 8.0.1 이상 8.0.3 미만 | 8.0.3 이상
+CVE-2026-126170 | FortiManager Cloud | 8.0.1 이상 8.0.3 미만 | 8.0.3 이상
+CVE-2026-126176 | FortiAnalyzer | 7.2.0 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126176 | FortiManager | 7.2.0 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126176 | FortiAnalyzer Cloud | 7.2.1 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126176 | FortiManager Cloud | 7.2.1 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126176 | FortiAnalyzer | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126176 | FortiManager | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126176 | FortiAnalyzer Cloud | 7.4.1 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126176 | FortiManager Cloud | 7.4.1 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126176 | FortiAnalyzer | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126176 | FortiAnalyzer Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126176 | FortiManager | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126176 | FortiManager Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126176 | FortiAnalyzer | 8.0.0 | 8.0.1 이상
+CVE-2026-126176 | FortiAnalyzer Cloud | 8.0.0 | 8.0.1 이상
+CVE-2026-126176 | FortiManager | 8.0.0 | 8.0.1 이상
+CVE-2026-126176 | FortiManager Cloud | 8.0.0 | 8.0.1 이상
+CVE-2026-126177 | FortiAnalyzer | 7.2.0 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126177 | FortiManager | 7.2.0 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126177 | FortiAnalyzer Cloud | 7.2.1 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126177 | FortiManager Cloud | 7.2.1 이상 7.2.13 미만 | 7.2.13 이상
+CVE-2026-126177 | FortiAnalyzer | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126177 | FortiManager | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126177 | FortiAnalyzer Cloud | 7.4.1 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126177 | FortiManager Cloud | 7.4.1 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126177 | FortiAnalyzer | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126177 | FortiAnalyzer Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126177 | FortiManager | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126177 | FortiManager Cloud | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126177 | FortiAnalyzer | 8.0.0 | 8.0.1 이상
+CVE-2026-126177 | FortiAnalyzer Cloud | 8.0.0 | 8.0.1 이상
+CVE-2026-126177 | FortiManager | 8.0.0 | 8.0.1 이상
+CVE-2026-126177 | FortiManager Cloud | 8.0.0 | 8.0.1 이상
+CVE-2026-126255 | FortiPAM | 1.0 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126255 | FortiPAM | 1.1 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126255 | FortiPAM | 1.2 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126255 | FortiPAM | 1.3 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126255 | FortiPAM | 1.4 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126255 | FortiPAM | 1.5 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126255 | FortiPAM | 1.6 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126255 | FortiOS | 7.2.0 이상 7.2.14 미만 | 7.2.14 이상
+CVE-2026-126255 | FortiOS | 7.4.0 이상 7.4.13 미만 | 7.4.13 이상
+CVE-2026-126255 | FortiOS | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126255 | FortiOS | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126181 | FortiManager | 7.2 모든 버전 | 해결 버전으로 마이그레이션
+CVE-2026-126181 | FortiManager | 7.4.0 이상 7.4.12 미만 | 7.4.12 이상
+CVE-2026-126181 | FortiManager | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126181 | FortiManager | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상
+CVE-2026-126254 | FortiOS | 7.2.0 이상 7.2.14 미만 | 7.2.14 이상
+CVE-2026-126254 | FortiOS | 7.4.0 이상 7.4.13 미만 | 7.4.13 이상
+CVE-2026-126254 | FortiOS | 7.6.0 이상 7.6.8 미만 | 7.6.8 이상
+CVE-2026-126254 | FortiOS | 8.0.0 이상 8.0.2 미만 | 8.0.2 이상",KISA 보호나라
+Git 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72307,2026-11-16,"□ 개요 o Git 패키지에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o Git에서 발생하는 취약점(CVE-2026-111760) [1][2] o Git에서 발생하는 Heap-based Buffer Overflow 취약점(CVE-2026-105437) [2][3]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-111760 | Git | 2.50.2 미만 | 2.50.2 이상
+CVE-2026-111760 | Git | 2.51.3 미만 | 2.51.3 이상
+CVE-2026-111760 | Git | 2.52.1 미만 | 2.52.1 이상
+CVE-2026-111760 | Git | 2.53.1 미만 | 2.53.1 이상
+CVE-2026-111760 | Git | 2.54.1 미만 | 2.54.1 이상
+CVE-2026-111760 | Git | 2.55.1 미만 | 2.55.1 이상
+CVE-2026-111760 | Git | 2.56.1 미만 | 2.56.1 이상
+CVE-2026-105437 | Git | 2.50.2 미만 | 2.50.2 이상
+CVE-2026-105437 | Git | 2.51.3 미만 | 2.51.3 이상
+CVE-2026-105437 | Git | 2.52.1 미만 | 2.52.1 이상
+CVE-2026-105437 | Git | 2.53.1 미만 | 2.53.1 이상
+CVE-2026-105437 | Git | 2.54.1 미만 | 2.54.1 이상
+CVE-2026-105437 | Git | 2.55.1 미만 | 2.55.1 이상
+CVE-2026-105437 | Git | 2.56.1 미만 | 2.56.1 이상",KISA 보호나라
+Vates 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72306,2026-11-13,"□ 개요 o Vates社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o Xen Orchestra에서 발생하는 Improper Authentication 취약점 [1]
+영향을 받는 제품 및 해결 방안:
+제품명 | 영향받는 버전 | 해결 버전
+Xen Orchestra | 6.10.1 미만 | 6.10.1 이상
+Xen Orchestra | 6.9.2 미만 | 6.9.2 이상",KISA 보호나라
+Apache 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72304,2026-11-12,"□ 개요 o Apache 재단은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o Apache HTTP Server에서 발생하는 Race Condition 취약점(CVE-2026-119618) [1][2] o Apache HTTP Server에서 발생하는 NULL Pointer Dereference 취약점(CVE-2026-106023) [1][3] o Apache HTTP Server에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-109163) [1][4]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-119618 | Apache HTTP Server | 2.4.55 이상 2.4.71 미만 | 2.4.71 이상
+CVE-2026-106023 | Apache HTTP Server | 2.4.30 이상 2.4.71 미만 | 2.4.71 이상
+CVE-2026-109163 | Apache HTTP Server | 2.4.69 이상 2.4.71 미만 | 2.4.71 이상",KISA 보호나라
+WordPress 플러그인 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72303,2026-11-12,"□ 개요 o WordPress의 WPML Multilingual CMS 플러그인에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[4] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o WPML Multilingual CMS에서 발생하는 Improper Authentication 취약점(CVE-2026-76877) [1][5] o LiteSpeed Cache에서 발생하는 Exposure of Sensitive Information to an Unauthorized Actor 취약점(CVE-2026-93389) [2][6] o Elementor Website Builder에서 발생하는 Cross-site Scripting 취약점(CVE-2026-109883) [3][7] o Ninja Forms - File Uploads에서 발생하는 Path Traversal 취약점(CVE-2026-126537) [4][8]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-76877 | WPML Multilingual CMS | 4.9.7 이하 | 5.0.0 이상
+CVE-2026-93389 | LiteSpeed Cache | 7.9.1 이하 | 7.9.2 이상
+CVE-2026-109883 | Elementor Website Builder | 4.3.5 이하 | 4.3.6 이상
+CVE-2026-126537 | Ninja Forms - File Uploads | 3.3.36 이하 | 3.3.37 이상",KISA 보호나라
+VMware 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72319,2026-11-20,"□ 개요 o Broadcom社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o VMware Telco Cloud Platform, VMware Telco Cloud Infrastructure, VMware Cloud Foundation, VMware vCenter, VMware vSphere Foundation에서 발생하는 Authentication Bypass Using an Alternate Path or Channel 취약점(CVE-2026-123890) [1][2] o SDDC Manager에서 발생하는 SQL Injection 취약점(CVE-2026-123891) [1][3] o SDDC Manager에서 발생하는 OS Command Injection 취약점(CVE-2026-123892) [1][4]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-123890 | VMware Telco Cloud Platform | 3.0 | 8.0 U3m 이상
+CVE-2026-123890 | VMware Telco Cloud Platform | 4.x | 8.0 U3m 이상
+CVE-2026-123890 | VMware Telco Cloud Platform | 5.0.x | 8.0 U3m 이상
+CVE-2026-123890 | VMware Telco Cloud Platform | 5.1.x | 8.0 U3m 이상
+CVE-2026-123890 | VMware Telco Cloud Platform | 5.2 | 8.0 U3m 이상
+CVE-2026-123890 | VMware Telco Cloud Infrastructure | 3.0 | 8.0 U3m 이상
+CVE-2026-123890 | VMware Cloud Foundation | 5.x | 5.2.5 이상
+CVE-2026-123890 | VMware vCenter | 7.0 | Broadcom 기술지원 문의
+CVE-2026-123890 | VMware vCenter | 8.0 | 8.0 U3m 이상
+CVE-2026-123890 | VMware Cloud Foundation | 9.0.x.x | 9.0.2.0200 이상
+CVE-2026-123890 | VMware vSphere Foundation | 9.0.x.x | 9.0.2.0200 이상
+CVE-2026-123890 | VMware Cloud Foundation | 9.1.x.x | 9.1.1.0200 이상
+CVE-2026-123890 | VMware vSphere Foundation | 9.1.x.x | 9.1.1.0200 이상
+CVE-2026-123891 | SDDC Manager | 5.x | 5.2.5 이상
+CVE-2026-123891 | SDDC Manager | 9.0.x.x | 9.0.2.0100 이상
+CVE-2026-123891 | SDDC Manager | 9.1.x.x | 9.1.1.0200 이상
+CVE-2026-123892 | SDDC Manager | 5.x | 5.2.5 이상
+CVE-2026-123892 | SDDC Manager | 9.0.x.x | 9.0.2.0100 이상
+CVE-2026-123892 | SDDC Manager | 9.1.x.x | 9.1.1.0200 이상",KISA 보호나라
+PHP 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72318,2026-11-19,"□ 개요 o The PHP Group은 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2][3][4] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o PHP에서 발생하는 Improper Input Validation, Deserialization of Untrusted Data 취약점(CVE-2026-115560) [1][5] o PHP에서 발생하는 Time-of-check Time-of-use (TOCTOU) Race Condition, Improper Synchronization 취약점(CVE-2026-126714) [1][6] o PHP에서 발생하는 Use After Free, Incomplete Cleanup 취약점(CVE-2026-129182) [1][7] o PHP에서 발생하는 HTTP Request Smuggling, Always-Incorrect Control Flow Implementation 취약점(CVE-2026-129289) [1][8] o PHP에서 발생하는 Use After Free 취약점(CVE-2026-129474) [1][9] o PHP에서 발생하는 Use After Free, Incomplete Cleanup 취약점(CVE-2026-129481) [1][10] o PHP에서 발생하는 Use After Free, Incomplete Cleanup 취약점(CVE-2026-129496) [1][11] o PHP에서 발생하는 Uncontrolled Resource Consumption, Inefficient Algorithmic Complexity 취약점(CVE-2026-127960) [1][12] o PHP에서 발생하는 Cleartext Transmission of Sensitive Information 취약점(CVE-2026-128064) [1][13] o PHP에서 발생하는 Improper Verification of Cryptographic Signature, Algorithm Downgrade 취약점(CVE-2026-128090) [1][14] o PHP에서 발생하는 Use After Free 취약점(CVE-2026-129291) [1][15] o PHP에서 발생하는 Cross-site Scripting 취약점(CVE-2026-129292) [1][16] o PHP에서 발생하는 Integer Overflow or Wraparound, Unchecked Return Value 취약점(CVE-2026-129438) [1][17] o PHP에서 발생하는 Double Free, Use After Free 취약점(CVE-2026-129501) [1][18] o PHP에서 발생하는 Use After Free 취약점(CVE-2026-129506) [1][19] o PHP에서 발생하는 Out-of-bounds Read, Out-of-bounds Write, Use of Out-of-range Pointer Offset 취약점(CVE-2026-129538) [1][20] o PHP에서 발생하는 Out-of-bounds Read, Use of Uninitialized Resource 취약점(CVE-2026-15353) [1][21] o PHP에서 발생하는 Integer Overflow or Wraparound 취약점(CVE-2026-48841) [1][22]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-115560 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-115560 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-115560 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-115560 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-126714 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-126714 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-126714 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-126714 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129182 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129289 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-129289 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-129289 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-129289 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129474 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129481 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-129481 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-129481 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129496 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-129496 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-129496 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-129496 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-127960 | PHP 8.2 | 8.2.28 이상 8.2.36 미만 | 8.2.36 이상
+CVE-2026-127960 | PHP 8.3 | 8.3.18 이상 8.3.37 미만 | 8.3.37 이상
+CVE-2026-127960 | PHP 8.4 | 8.4.5 이상 8.4.28 미만 | 8.4.28 이상
+CVE-2026-127960 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-128064 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-128064 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-128064 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-128064 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-128090 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-128090 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-128090 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-128090 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129291 | PHP 8.2 | 8.2.7 이상 8.2.36 미만 | 8.2.36 이상
+CVE-2026-129291 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-129291 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-129291 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129292 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-129292 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-129292 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-129292 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129438 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129501 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-129501 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129506 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-129506 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-129506 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-129506 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-129538 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-129538 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-129538 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-129538 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-15353 | PHP 8.2 | 8.2.36 미만 | 8.2.36 이상
+CVE-2026-15353 | PHP 8.3 | 8.3.37 미만 | 8.3.37 이상
+CVE-2026-15353 | PHP 8.4 | 8.4.28 미만 | 8.4.28 이상
+CVE-2026-15353 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상
+CVE-2026-48841 | PHP 8.5 | 8.5.13 미만 | 8.5.13 이상",KISA 보호나라
+F5 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72316,2026-11-19,"□ 개요 o F5社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1]~[12] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o BIG-IP Access Policy Manager(APM)에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-123637) [1][13] o BIG-IP Policy Enforcement Manager(PEM), BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-121805) [2][14] o BIG-IP, BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-120292) [3][15] o BIG-IP, BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-120285) [4][16] o BIG-IP, BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-116953) [5][17] o BIG-IP DNS, BIG-IP CNF, BIG-IP Next for Kubernetes에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-120722) [6][18] o BIG-IP에서 발생하는 Insufficient Session Timeout Value 취약점(CVE-2026-120718) [7][19] o BIG-IP, BIG-IQ Centralized Management에서 발생하는 CRLF Injection 취약점(CVE-2026-125274) [8][20] o BIG-IP Access Policy Manager(APM)에서 발생하는 Stack-based Buffer Overflow 취약점(CVE-2026-125272) [9][21] o BIG-IP Access Policy Manager(APM)에서 발생하는 Integer Underflow (Wrap or Wraparound) 취약점(CVE-2026-126822) [10][22] o BIG-IP Access Policy Manager(APM)에서 발생하는 Integer Underflow (Wrap or Wraparound) 취약점(CVE-2026-126336) [11][23] o BIG-IP Access Policy Manager(APM), BIG-IP SSL Orchestrator에서 발생하는 Integer Underflow (Wrap or Wraparound) 취약점(CVE-2026-121812) [12][24]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-123637 | BIG-IP APM | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-123637 | BIG-IP APM | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-123637 | BIG-IP APM | 21.1.0 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP PEM | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP PEM | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP PEM | 21.1.0 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP CNF | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP CNF | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP CNF | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP Next for Kubernetes | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP Next for Kubernetes | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-121805 | BIG-IP Next for Kubernetes | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP (all modules) | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP (all modules) | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP (all modules) | 21.1.0 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP CNF | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP CNF | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP CNF | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP Next for Kubernetes | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP Next for Kubernetes | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-120292 | BIG-IP Next for Kubernetes | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP (all modules) | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP (all modules) | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP (all modules) | 21.1.0 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP CNF | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP CNF | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP CNF | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP Next for Kubernetes | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP Next for Kubernetes | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-120285 | BIG-IP Next for Kubernetes | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP (all modules) | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP (all modules) | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP (all modules) | 21.1.0 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP CNF | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP CNF | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP CNF | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP Next for Kubernetes | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP Next for Kubernetes | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-116953 | BIG-IP Next for Kubernetes | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP DNS | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP DNS | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP DNS | 21.1.0 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP CNF | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP CNF | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP CNF | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP Next for Kubernetes | 2.2.0 이상 2.2.5 이하 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP Next for Kubernetes | 2.3.0 이상 2.3.4 이하 | 핫픽스 적용
+CVE-2026-120722 | BIG-IP Next for Kubernetes | 2.4.0 이상 2.4.2 이하 | 핫픽스 적용
+CVE-2026-120718 | BIG-IP (all modules) | 17.1.0 이상 17.1.3 이하 | 17.1.3.6 이상
+CVE-2026-120718 | BIG-IP (all modules) | 17.5.0 이상 17.5.1 이하 | 17.5.1.10 이상
+CVE-2026-120718 | BIG-IP (all modules) | 21.1.0 | 21.1.0.2 이상
+CVE-2026-125274 | BIG-IP (all modules) | 17.1.0 이상 17.1.3 이하 | 17.1.3.6 이상
+CVE-2026-125274 | BIG-IP (all modules) | 17.5.0 이상 17.5.1 이하 | 17.5.1.10 이상
+CVE-2026-125274 | BIG-IP (all modules) | 21.1.0 | 21.1.0.3 이상
+CVE-2026-125274 | BIG-IQ Centralized Management | 8.4.0 이상 8.4.2 이하 | 8.4.2.3 이상
+CVE-2026-125272 | BIG-IP APM | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-125272 | BIG-IP APM | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-125272 | BIG-IP APM | 21.1.0 | 핫픽스 적용
+CVE-2026-126822 | BIG-IP APM | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-126822 | BIG-IP APM | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-126822 | BIG-IP APM | 21.1.0 | 핫픽스 적용
+CVE-2026-126336 | BIG-IP APM | 17.1.0 이상 17.1.3 이하 | 17.1.3.6 이상
+CVE-2026-126336 | BIG-IP APM | 17.5.0 이상 17.5.1 이하 | 17.5.1.10 이상
+CVE-2026-126336 | BIG-IP APM | 21.1.0 | 21.1.0.3 이상
+CVE-2026-121812 | BIG-IP APM | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-121812 | BIG-IP APM | 17.5.0 이상 17.5.1 이하 | 핫픽스 적용
+CVE-2026-121812 | BIG-IP APM | 21.1.0 | 핫픽스 적용
+CVE-2026-121812 | BIG-IP SSL Orchestrator | 17.1.0 이상 17.1.3 이하 | 핫픽스 적용
+CVE-2026-121812 | BIG-IP SSL Orchestrator | 17.5.0 | 핫픽스 적용
+CVE-2026-121812 | BIG-IP SSL Orchestrator | 21.1.0 | 핫픽스 적용",KISA 보호나라
+Oracle 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72315,2026-11-19,"□ 개요 o Oracle社는 자사 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91569) [1][2] o Oracle WebLogic Server에서 발생하는 Improper Authentication 취약점(CVE-2026-91456) [1][3] o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91470) [1][4] o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91570) [1][5] o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91583) [1][6] o Oracle WebLogic Server에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-91585) [1][7] o Oracle WebLogic Server에서 발생하는 취약점(CVE-2026-91469) [1][8] o Oracle Application Object Library에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114924) [1][9] o Oracle Concurrent Processing에서 발생하는 취약점(CVE-2026-114918) [1][10] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114934) [1][11] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114862) [1][12] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114928) [1][13] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114937) [1][14] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114932) [1][15] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114933) [1][16] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114931) [1][17] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114929) [1][18] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Missing Authentication for Critical Function 취약점(CVE-2026-114930) [1][19] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 취약점(CVE-2026-114935) [1][20] o Oracle PeopleSoft Enterprise PeopleTools에서 발생하는 Improper Privilege Management 취약점(CVE-2026-114927) [1][21] o Oracle VM VirtualBox에서 발생하는 Improper Access Control 취약점(CVE-2026-127421) [1][22] o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127425) [1][23] o Oracle VM VirtualBox에서 발생하는 Uncontrolled Resource Consumption 취약점(CVE-2026-127413) [1][24] o Oracle VM VirtualBox에서 발생하는 Uncontrolled Resource Consumption 취약점(CVE-2026-127427) [1][25] o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127426) [1][26] o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127414) [1][27] o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127422) [1][28] o Oracle VM VirtualBox에서 발생하는 취약점(CVE-2026-127423) [1][29]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-91569 | WebLogic Server | 12.2.1.4.0 | Oracle 보안 패치 적용
+CVE-2026-91569 | WebLogic Server | 14.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91569 | WebLogic Server | 14.1.2.0.0 | Oracle 보안 패치 적용
+CVE-2026-91569 | WebLogic Server | 15.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91456 | WebLogic Server | 12.2.1.4.0 | Oracle 보안 패치 적용
+CVE-2026-91456 | WebLogic Server | 14.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91456 | WebLogic Server | 14.1.2.0.0 | Oracle 보안 패치 적용
+CVE-2026-91456 | WebLogic Server | 15.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91470 | WebLogic Server | 12.2.1.4.0 | Oracle 보안 패치 적용
+CVE-2026-91470 | WebLogic Server | 14.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91470 | WebLogic Server | 14.1.2.0.0 | Oracle 보안 패치 적용
+CVE-2026-91470 | WebLogic Server | 15.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91570 | WebLogic Server | 12.2.1.4.0 | Oracle 보안 패치 적용
+CVE-2026-91570 | WebLogic Server | 14.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91570 | WebLogic Server | 14.1.2.0.0 | Oracle 보안 패치 적용
+CVE-2026-91570 | WebLogic Server | 15.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91583 | WebLogic Server | 12.2.1.4.0 | Oracle 보안 패치 적용
+CVE-2026-91583 | WebLogic Server | 14.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91583 | WebLogic Server | 14.1.2.0.0 | Oracle 보안 패치 적용
+CVE-2026-91583 | WebLogic Server | 15.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91585 | WebLogic Server | 12.2.1.4.0 | Oracle 보안 패치 적용
+CVE-2026-91585 | WebLogic Server | 14.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91585 | WebLogic Server | 14.1.2.0.0 | Oracle 보안 패치 적용
+CVE-2026-91585 | WebLogic Server | 15.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91469 | WebLogic Server | 12.2.1.4.0 | Oracle 보안 패치 적용
+CVE-2026-91469 | WebLogic Server | 14.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-91469 | WebLogic Server | 14.1.2.0.0 | Oracle 보안 패치 적용
+CVE-2026-91469 | WebLogic Server | 15.1.1.0.0 | Oracle 보안 패치 적용
+CVE-2026-114924 | Application Object Library | 12.2.3 이상 12.2.15 이하 | Oracle 보안 패치 적용
+CVE-2026-114918 | Concurrent Processing | 12.2.3 이상 12.2.15 이하 | Oracle 보안 패치 적용
+CVE-2026-114934 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114862 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114928 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114937 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114932 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114933 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114931 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114929 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114930 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114935 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-114927 | PeopleSoft Enterprise PeopleTools | 8.61 이상 8.63 이하 | Oracle 보안 패치 적용
+CVE-2026-127421 | VM VirtualBox | 7.2.22 | Oracle 보안 패치 적용
+CVE-2026-127425 | VM VirtualBox | 7.2.22 | Oracle 보안 패치 적용
+CVE-2026-127413 | VM VirtualBox | 7.2.22 | Oracle 보안 패치 적용
+CVE-2026-127427 | VM VirtualBox | 7.2.22 | Oracle 보안 패치 적용
+CVE-2026-127426 | VM VirtualBox | 7.2.22 | Oracle 보안 패치 적용
+CVE-2026-127414 | VM VirtualBox | 7.2.22 | Oracle 보안 패치 적용
+CVE-2026-127422 | VM VirtualBox | 7.2.22 | Oracle 보안 패치 적용
+CVE-2026-127423 | VM VirtualBox | 7.2.22 | Oracle 보안 패치 적용",KISA 보호나라
+NGINX 제품 보안 업데이트 권고,https://www.boho.or.kr/kr/bbs/view.do?searchCnd=&bbsId=B0000133&searchWrd=&menuNo=205020&pageIndex=1&categoryCode=&nttId=72314,2026-11-19,"□ 개요 o F5社는 자사 NGINX 제품에서 발생하는 취약점을 해결한 보안 업데이트 발표 [1][2][3][4][5] o 영향을 받는 버전을 사용 중인 사용자는 해결 방안에 따라 최신 버전으로 업데이트 권고
+□ 설명 o NGINX Plus 및 NGINX Open Source에서 발생하는 Integer Underflow (Wrap or Wraparound) 취약점(CVE-2026-123007) [1][6] o NGINX Plus 및 NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-123634) [2][7] o NGINX Plus 및 NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-123633) [3][8] o NGINX Plus 및 NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-121810) [4][9] o NGINX Plus 및 NGINX Open Source에서 발생하는 Use After Free 취약점(CVE-2026-113425) [5][10]
+영향을 받는 제품 및 해결 방안:
+취약점 | 제품명 | 영향받는 버전 | 해결 버전
+CVE-2026-123007 | NGINX Open Source | 1.9.5 이상 1.30.6 이하 | 1.30.7
+CVE-2026-123007 | NGINX Open Source | 1.31.0 이상 1.31.8 이하 | 1.31.9
+CVE-2026-123007 | NGINX Plus | 37.1.0 이상 37.2.0.1 이하 | 37.3.0.1
+CVE-2026-123007 | NGINX Plus | 37.0.0 이상 37.0.7.1 이하 | 37.0.8.1
+CVE-2026-123007 | NGINX Plus | R34 이상 R36 이하 | -
+CVE-2026-123634 | NGINX Open Source | 0.6.18 이상 1.30.6 이하 | 1.30.7
+CVE-2026-123634 | NGINX Open Source | 1.31.0 이상 1.31.8 이하 | 1.31.9
+CVE-2026-123634 | NGINX Plus | 37.1.0 이상 37.2.0.1 이하 | 37.3.0.1
+CVE-2026-123634 | NGINX Plus | 37.0.0 이상 37.0.7.1 이하 | 37.0.8.1
+CVE-2026-123634 | NGINX Plus | R34 이상 R36 이하 | -
+CVE-2026-123633 | NGINX Open Source | 1.19.7 이상 1.30.6 이하 | 1.30.7
+CVE-2026-123633 | NGINX Open Source | 1.31.0 이상 1.31.8 이하 | 1.31.9
+CVE-2026-123633 | NGINX Plus | 37.1.0 이상 37.2.0.1 이하 | 37.3.0.1
+CVE-2026-123633 | NGINX Plus | 37.0.0 이상 37.0.7.1 이하 | 37.0.8.1
+CVE-2026-123633 | NGINX Plus | R34 이상 R36 이하 | -
+CVE-2026-121810 | NGINX Open Source | 1.25.0 이상 1.30.6 이하 | 1.30.7
+CVE-2026-121810 | NGINX Open Source | 1.31.0 이상 1.31.8 이하 | 1.31.9
+CVE-2026-121810 | NGINX Plus | 37.1.0 이상 37.2.0.1 이하 | 37.3.0.1
+CVE-2026-121810 | NGINX Plus | 37.0.0 이상 37.0.7.1 이하 | 37.0.8.1
+CVE-2026-121810 | NGINX Plus | R34 이상 R36 이하 | -
+CVE-2026-113425 | NGINX Open Source | 0.5.33 이상 1.30.6 이하 | 1.30.7
+CVE-2026-113425 | NGINX Open Source | 1.31.0 이상 1.31.8 이하 | 1.31.9
+CVE-2026-113425 | NGINX Plus | 37.1.0 이상 37.2.0.1 이하 | 37.3.0.1
+CVE-2026-113425 | NGINX Plus | 37.0.0 이상 37.0.7.1 이하 | 37.0.8.1
+CVE-2026-113425 | NGINX Plus | R34 이상 R36 이하 | -",KISA 보호나라
+Linux KVM Flaw CVE-2026-99312 Lets Guest VMs Access Host Memory on AMD Hosts,https://thehackernews.com/2026/11/new-linux-kvm-flaw-cve-2026-99312-lets.html,"Fri, 20 Nov 2026 17:50:00 +0530","A flaw in KVM, the hypervisor built into the Linux kernel, let researchers read about 127 GB of a cloud server's memory from inside a virtual machine of their own on DigitalOcean. On a shared server, that memory can include other customers' virtual machines. The flaw, tracked as CVE-2026-99312, affects only hosts with AMD processors and nested virtualization enabled. Fixed kernels shipped",The Hacker News
+The Path to AI Autonomy in the SOC,https://thehackernews.com/2026/11/the-path-to-ai-autonomy-in-soc.html,"Fri, 20 Nov 2026 17:30:00 +0530","Security leaders are about to hand AI agents a lot more authority. In a recent a16z survey of CISOs at organizations with more than 1,000 employees, 36% said they are comfortable today letting AI agents act autonomously on low-risk security actions. In 12 months from now, 60% expect to be comfortable at that level. Overall, AI SOC was the highest ranking initiative for 2027. The pressure",The Hacker News
+"SonicWall Warns Gen 6 Firewalls Won't Get Security Patches, Even for Critical Flaws",https://thehackernews.com/2026/11/sonicwall-warns-gen-6-firewalls-wont.html,"Fri, 20 Nov 2026 16:08:22 +0530","SonicWall has urged all customers still running Generation 6 firewalls to retire and replace them immediately and stop exposing the devices on the internet edge, citing security risks fueled by AI-assisted attacks. ""Attackers now use automation and AI to find and exploit unsupported edge devices faster than ever,"" SonicWall said. ""We expect internet-facing Gen 6 firewalls to be actively",The Hacker News
+"Hackers Exploit Critical Cisco Expressway Flaw, Breach Four Devices and Reach Internal Network",https://thehackernews.com/2026/11/hackers-exploit-critical-cisco.html,"Fri, 20 Nov 2026 16:02:50 +0530","Threat actors have been observed exploiting a recently disclosed critical security flaw in Cisco Expressway to breach a Russian organization shortly after the public release of a proof-of-concept (PoC) exploit. The activity involves the exploitation of CVE-2026-76466 (CVSS score: 9.8), a vulnerability that could allow an unauthenticated, remote attacker with network access to a Cisco Expressway",The Hacker News
+China-Linked Hackers Exploit Critical VMware vCenter Zero-Day to Gain Admin Access and Steal Data,https://thehackernews.com/2026/11/china-linked-hackers-exploit-critical.html,"Fri, 20 Nov 2026 15:08:15 +0530","The suspected China-nexus cyber espionage group known as Armory Castle (formerly UNC5221) has been attributed to the zero-day exploitation of a critical security flaw in VMware vCenter Server in early September 2026. The vulnerability, tracked as CVE-2026-123890 (CVSS score: 9.8), is a case of authentication bypass in the VMware Directory Service that could be exploited to gain unauthorized",The Hacker News
+ROMULUS ClickFix Attacks Deliver RAT That Can Spy on Users and Control PCs,https://thehackernews.com/2026/11/romulus-clickfix-attacks-deliver-rat.html,"Fri, 20 Nov 2026 12:41:39 +0530","Threat actors have been observed using the ROMULUS ClickFix malware delivery platform to deliver a previously undocumented remote access trojan (RAT) that shares similarities with CNCMachineRMS. ""ROMULUS likely operates as a delivery service, distributing CNCMachineRMS and Legion Loader through separate chains while retaining ClickFix and signed binary sideloading techniques,"" Blackpoint",The Hacker News
+New Unpatched Windows 0-Day FastUnlock Lets Someone Holding a Locked PC Run Programs on It,https://thehackernews.com/2026/11/new-unpatched-windows-0-day-fastunlock.html,"Fri, 20 Nov 2026 11:00:01 +0530","A newly disclosed unpatched zero-day technique called FastUnlock lets someone with physical access to a locked Windows computer start programs without signing in. Whoever uses it gets only a limited account, not administrator control of the machine. The method was posted yesterday by a researcher who uses the handles MSNightmare and Nightmare Eclipse, and the endpoint-security firm ThreatLocker",The Hacker News
+"ThreatsDay: GPT-6.2 Jailbreak Flaws, BubbleLoader PNG Malware, $500M Ransom Demands + 17 More Stories",https://thehackernews.com/2026/11/threatsday-gpt-62-jailbreak-flaws.html,"Fri, 20 Nov 2026 00:17:58 +0530","The easiest way to fool someone is to give them something they already expect. A job offer. A message about a service outage. A familiar app. Nothing looks strange at first. And that's the problem. This week's stories show how ordinary things are being used to steal data, spread malware, and get people to hand over access. There's another shift worth watching. AI is making some attacks easier",The Hacker News
+phpAfterShell Explained: How Hackers Could Turn a PHP Session Flaw Into Code Execution,https://thehackernews.com/2026/11/phpaftershell-explained-how-hackers.html,"Thu, 19 Nov 2026 22:29:56 +0530","PHP's default file-based session storage can be made to return objects an attacker chose, by cutting off a session write at the right moment. When combined with a second weakness, such as a suitable gadget chain in the app, those objects can allow the attacker to run code on the server. Today's PHP releases fix the flaw, called phpAfterShell. The flaw is tracked as CVE-2026-126714 and rated",The Hacker News
+"PHP Fixes 7 Critical Flaws, Including Bugs That Could Allow Remote Code Execution",https://thehackernews.com/2026/11/php-fixes-7-critical-flaws-including.html,"Thu, 19 Nov 2026 20:48:07 +0530","The PHP Foundation has released security updates to address multiple critical security flaws that could be exploited to achieve remote code execution on affected deployments, including CVE-2026-115560. The release of the patch follows an advance notice in which the project maintainers alerted users to multiple critical vulnerabilities affecting all supported PHP versions under specific",The Hacker News
