@@ -27,7 +27,8 @@ with patch("crawler.feedparser.parse", return_value=fake_feed):
 
     articles = fetch_articles(
         "https://example.com/rss",
-        limit=10
+        limit=10,
+        source="KISA 보호나라",
     )
 
     # 정상 기사 1개만 남아야 함
@@ -36,9 +37,10 @@ with patch("crawler.feedparser.parse", return_value=fake_feed):
     # 정상 기사 제목 확인
     assert articles[0]["title"] == "정상 보안 기사"
 
-    # 딕셔너리 4개 키 확인
+    # 딕셔너리 5개 키 확인
     assert set(articles[0].keys()) == {
-        "title", "link", "date", "content"
+        "title", "link", "date", "content", "source"
     }
+    assert articles[0]["source"] == "KISA 보호나라"
 
 print("\n제목 및 링크 누락 테스트 성공!")

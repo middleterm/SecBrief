@@ -1,4 +1,3 @@
 feedparser
 streamlit
-python-dotenv
-openai
+matplotlib

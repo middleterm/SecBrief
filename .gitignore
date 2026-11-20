@@ -1,7 +1,6 @@
 # 환경 변수 및 비밀 정보
 .env
 .env.*
-!.env.example
 .streamlit/secrets.toml
 
 # Python
