@@ -1,3 +1,5 @@
 feedparser
 streamlit
 matplotlib
+requests
+beautifulsoup4

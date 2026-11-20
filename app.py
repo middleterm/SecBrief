@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import streamlit as st
 
-from crawler import RSS_SOURCES, fetch_articles
+from crawler import RSS_SOURCES, fetch_articles, refresh_article_contents
 from recommender import (
     CATEGORY_KEYWORDS,
     count_articles_by_keyword,
@@ -105,12 +105,20 @@ if collect_clicked:
         limit=10,
         source=selected_source_name,
     )
+    changed_count = 0
     if collected_articles:
-        added_count = save_articles(collected_articles)
-        st.session_state.articles = load_articles()
+        changed_count = save_articles(collected_articles)
+
+    stored_articles = load_articles()
+    refreshed_count = refresh_article_contents(stored_articles)
+    if refreshed_count > 0:
+        save_articles(stored_articles)
+    st.session_state.articles = load_articles()
+
+    if collected_articles or refreshed_count > 0:
         st.success(
             f"{selected_source_name}에서 {len(collected_articles)}개를 수집했고, "
-            f"{added_count}개를 새로 저장했습니다."
+            f"{changed_count + refreshed_count}개를 저장하거나 갱신했습니다."
         )
     else:
         st.error("기사를 수집하지 못했습니다. RSS 주소와 인터넷 연결을 확인하세요.")

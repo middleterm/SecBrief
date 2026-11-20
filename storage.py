@@ -55,12 +55,28 @@ def save_articles(articles):
     for article in old_articles:
         saved_links.append(article["link"])
 
-    added_count = 0
+    changed_count = 0
     for article in articles:
         title = str(article.get("title") or "").strip()
         link = str(article.get("link") or "").strip()
 
-        if not title or not link or link in saved_links:
+        if not title or not link:
+            continue
+
+        if link in saved_links:
+            existing_index = saved_links.index(link)
+            old_article = old_articles[existing_index]
+            new_content = str(article.get("content") or "").strip()
+            old_content = str(old_article.get("content") or "").strip()
+
+            # 기존 내용이 없고 새로 수집한 본문이 있으면 기존 행만 갱신한다.
+            if (
+                new_content
+                and new_content != "내용 없음"
+                and (not old_content or old_content == "내용 없음")
+            ):
+                old_article["content"] = new_content
+                changed_count += 1
             continue
 
         old_articles.append(
@@ -73,7 +89,7 @@ def save_articles(articles):
             }
         )
         saved_links.append(link)
-        added_count += 1
+        changed_count += 1
 
     ensure_data_folder()
     try:
@@ -94,7 +110,7 @@ def save_articles(articles):
         print("기사 파일을 저장하는 중 오류가 발생했습니다:", error)
         return 0
 
-    return added_count
+    return changed_count
 
 
 def load_keywords():
