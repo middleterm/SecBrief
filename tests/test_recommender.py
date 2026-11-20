@@ -46,7 +46,7 @@ class FilterArticlesTest(unittest.TestCase):
 
     def test_category_names_are_fixed(self):
         self.assertEqual(
-            set(CATEGORY_KEYWORDS), {"웹 보안", "악성코드", "개인정보"}
+            set(CATEGORY_KEYWORDS), {"웹 보안", "악성코드", "개인정보", "클라우드"}
         )
 
     def test_each_category_can_be_selected_alone(self):
@@ -88,6 +88,16 @@ class FilterArticlesTest(unittest.TestCase):
 
     def test_no_match_returns_empty_list(self):
         self.assertEqual(filter_articles([self.articles[4]], ["개인정보"]), [])
+
+    def test_user_keyword_filters_articles_without_category(self):
+        result = filter_articles(self.articles, [], ["gDpR"])
+
+        self.assertEqual(result, [self.articles[2]])
+
+    def test_user_keyword_does_not_duplicate_category_match(self):
+        result = filter_articles(self.articles, ["웹 보안"], ["xss"])
+
+        self.assertEqual(result, [self.articles[0], self.articles[3]])
 
 
 if __name__ == "__main__":
