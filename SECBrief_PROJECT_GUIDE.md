@@ -36,6 +36,7 @@ SecBrief/
 ├─ data/
 │  ├─ articles.csv            # 수집된 기사 저장 파일
 │  └─ keywords.txt            # 사용자 키워드 저장 파일
+│  └─ memos.csv               # 기사별 학습 메모 저장 파일
 └─ tests/
    ├─ test_crawler.py
    ├─ test_recommender.py
@@ -98,6 +99,7 @@ articles = fetch_articles(
 - 기존 기사에 내용이 없으면 새로 수집한 본문으로 해당 행만 갱신한다.
 - `save_keywords()`는 사용자 키워드를 TXT 파일에 한 줄씩 쓴다.
 - `load_keywords()`는 TXT 파일을 한 줄씩 읽는다.
+- `save_memos()`와 `load_memos()`는 기사 링크별 학습 메모를 `data/memos.csv`에 저장하고 읽는다.
 - 파일이 아직 없으면 빈 리스트를 반환한다.
 
 ### recommender.py
@@ -131,6 +133,7 @@ Streamlit 화면에서 다음 기능을 제공한다.
 6. 전체 기사 수와 검색 결과 수 표시
 7. 기사 제목, 발행일, 출처, 내용, 원문 링크 표시
 8. 키워드별 기사 수와 막대그래프 표시
+9. 선택 기사별 학습 메모 작성 및 `data/memos.csv` 저장
 
 기사 수집 버튼을 누르면 내용이 없는 기존 기사도 원문에서 본문을 다시 확인한다.
 

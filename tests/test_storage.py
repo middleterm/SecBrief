@@ -106,12 +106,34 @@ class StorageTest(unittest.TestCase):
         with patch("storage.open", side_effect=FileNotFoundError):
             self.assertEqual(storage.load_articles(), [])
             self.assertEqual(storage.load_keywords(), [])
+            self.assertEqual(storage.load_memos(), {})
 
     def test_keyword_save_error_returns_none(self):
         with patch.object(storage, "ensure_data_folder"), patch(
             "storage.open", side_effect=OSError
         ):
             self.assertIsNone(storage.save_keywords(["XSS"]))
+
+    def test_memos_are_saved_and_loaded_by_article_link(self):
+        fake_file = mock_open()
+
+        with patch.object(storage, "ensure_data_folder"), patch(
+            "storage.open", fake_file
+        ):
+            self.assertTrue(storage.save_memos({"https://example.com/1": "복습할 내용"}))
+
+        fake_file = mock_open(read_data="link,memo\nhttps://example.com/1,복습할 내용\n")
+        with patch("storage.open", fake_file):
+            self.assertEqual(
+                storage.load_memos(),
+                {"https://example.com/1": "복습할 내용"},
+            )
+
+    def test_memo_save_error_returns_false(self):
+        with patch.object(storage, "ensure_data_folder"), patch(
+            "storage.open", side_effect=OSError
+        ):
+            self.assertFalse(storage.save_memos({"https://example.com/1": "메모"}))
 
 
 if __name__ == "__main__":

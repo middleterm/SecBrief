@@ -94,6 +94,38 @@ with patch("crawler.requests.get", return_value=fake_response):
     assert "메뉴" not in content
 
 
+structured_response = SimpleNamespace(
+    text="""
+    <html>
+      <div id="lnb">메뉴</div>
+      <div class="content_html">
+        <div class="stacks-scope">
+          <p>□ 개요 보안 업데이트가 발표되었습니다.</p>
+          <p>□ 설명 취약점 설명입니다.</p>
+          <p>□ 영향을 받는 제품 및 해결 방안</p>
+          <table>
+            <tr><th>CVE</th><th>제품명</th><th>영향받는 버전</th><th>해결 방법</th></tr>
+            <tr><td>CVE-1</td><td>제품 A</td><td>1.0</td><td>1.1 이상</td></tr>
+          </table>
+        </div>
+      </div>
+    </html>
+    """,
+    raise_for_status=lambda: None,
+)
+
+with patch("crawler.requests.get", return_value=structured_response):
+    structured_content = fetch_web_content(
+        "https://www.boho.or.kr/kr/bbs/view.do?id=2",
+        "KISA 보호나라",
+    )
+
+    assert "보안 업데이트가 발표되었습니다." in structured_content
+    assert "영향을 받는 제품 및 해결 방안:" in structured_content
+    assert "CVE-1 | 제품 A | 1.0 | 1.1 이상" in structured_content
+    assert "메뉴" not in structured_content
+
+
 refresh_articles = [
     {
         "title": "내용 없음",

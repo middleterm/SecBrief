@@ -8,6 +8,7 @@ BASE_FOLDER = os.path.dirname(os.path.abspath(__file__))
 DATA_FOLDER = os.path.join(BASE_FOLDER, "data")
 ARTICLES_FILE = os.path.join(DATA_FOLDER, "articles.csv")
 KEYWORDS_FILE = os.path.join(DATA_FOLDER, "keywords.txt")
+MEMOS_FILE = os.path.join(DATA_FOLDER, "memos.csv")
 ARTICLE_FIELDS = ["title", "link", "date", "content", "source"]
 
 
@@ -156,3 +157,41 @@ def save_keywords(keywords):
         return None
 
     return clean_keywords
+
+
+def load_memos():
+    """기사 링크별 학습 메모를 CSV에서 읽는다."""
+    memos = {}
+
+    try:
+        with open(MEMOS_FILE, "r", newline="", encoding="utf-8-sig") as file:
+            reader = csv.reader(file)
+            next(reader, None)
+            for row in reader:
+                if len(row) >= 2 and row[0]:
+                    memos[row[0]] = row[1]
+    except FileNotFoundError:
+        return {}
+    except (OSError, csv.Error) as error:
+        print("메모 파일을 읽는 중 오류가 발생했습니다:", error)
+        return {}
+
+    return memos
+
+
+def save_memos(memos):
+    """기사 링크별 학습 메모를 CSV에 저장한다."""
+    ensure_data_folder()
+
+    try:
+        with open(MEMOS_FILE, "w", newline="", encoding="utf-8-sig") as file:
+            writer = csv.writer(file)
+            writer.writerow(["link", "memo"])
+            for link in memos:
+                if link:
+                    writer.writerow([link, str(memos[link])])
+    except OSError as error:
+        print("메모 파일을 저장하는 중 오류가 발생했습니다:", error)
+        return False
+
+    return True

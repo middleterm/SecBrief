@@ -84,6 +84,8 @@ def remove_unnecessary_tags(soup):
     ]
 
     for tag in soup.find_all(True):
+        if tag.attrs is None:
+            continue
         class_value = tag.get("class", [])
         if isinstance(class_value, list):
             class_value = " ".join(class_value)
@@ -100,10 +102,8 @@ def remove_unnecessary_tags(soup):
             tag.decompose()
 
 
-def get_page_lines(soup):
-    """페이지에서 메뉴·광고·문의 문구를 제외한 텍스트 줄을 만든다."""
-    remove_unnecessary_tags(soup)
-    lines = []
+def is_noise_text(text):
+    """본문에 포함하지 않을 메뉴·광고·문의 문구인지 확인한다."""
     noise_words = [
         "광고",
         "문의 사항",
@@ -117,21 +117,46 @@ def get_page_lines(soup):
         "로그인",
         "회원가입",
         "검색",
+        "참고사이트",
+        "참고 사이트",
+        "작성 :",
+        "작성:",
     ]
 
-    page_text = soup.get_text("\n")
+    for noise_word in noise_words:
+        if noise_word.lower() in text.lower():
+            return True
+    return False
+
+
+def get_main_area(soup):
+    """사이트에서 기사 본문 영역을 우선 선택한다."""
+    content_area = soup.select_one(".content_html")
+    if content_area is not None:
+        return content_area
+
+    article_area = soup.find("article")
+    if article_area is not None:
+        return article_area
+
+    main_area = soup.find("main")
+    if main_area is not None:
+        return main_area
+
+    return soup
+
+
+def get_page_lines(soup):
+    """페이지에서 메뉴·광고·문의 문구를 제외한 텍스트 줄을 만든다."""
+    remove_unnecessary_tags(soup)
+    lines = []
+    page_text = get_main_area(soup).get_text("\n")
     for line in page_text.splitlines():
         line = clean_content(line)
         if len(line) < 2:
             continue
 
-        is_noise = False
-        for noise_word in noise_words:
-            if noise_word.lower() in line.lower():
-                is_noise = True
-                break
-
-        if not is_noise and line not in lines:
+        if not is_noise_text(line) and line not in lines:
             lines.append(line)
 
     return lines
@@ -159,6 +184,43 @@ def is_section_line(line):
 
 def extract_kisa_content(soup):
     """KISA 공지에서 개요·설명·영향 제품·해결 방안을 추출한다."""
+    remove_unnecessary_tags(soup)
+    content_area = soup.select_one(".content_html")
+
+    # 현재 KISA 페이지는 content_html 안에 설명 문단과 제품 표가 있다.
+    if content_area is not None:
+        result = []
+        for item in content_area.find_all(["p", "table"]):
+            if item.name == "p":
+                text = clean_content(item.get_text(" "))
+                if text and not is_noise_text(text):
+                    if "http://" not in text and "https://" not in text:
+                        if not (
+                            "영향을 받는 제품" in text
+                            and "해결" in text
+                        ):
+                            result.append(text)
+                continue
+
+            table_rows = []
+            for row in item.find_all("tr"):
+                cells = []
+                for cell in row.find_all(["th", "td"]):
+                    cell_text = clean_content(cell.get_text(" "))
+                    if cell_text:
+                        cells.append(cell_text)
+                if cells:
+                    table_rows.append(" | ".join(cells))
+
+            if table_rows:
+                result.append("영향을 받는 제품 및 해결 방안:")
+                for table_row in table_rows:
+                    result.append(table_row)
+
+        if result:
+            return "\n".join(result)
+
+    # 구조가 다른 KISA 페이지는 제목 줄을 기준으로 한 번 더 찾는다.
     lines = get_page_lines(soup)
     sections = [
         ("개요", ["개요"]),
@@ -255,7 +317,12 @@ def fetch_web_content(url, source=""):
         else:
             content = extract_general_content(soup)
 
-        return clean_content(content)
+        cleaned_lines = []
+        for line in str(content).splitlines():
+            line = clean_content(line)
+            if line:
+                cleaned_lines.append(line)
+        return "\n".join(cleaned_lines)
     except Exception as error:
         print("원문 본문 수집 중 오류가 발생했습니다:", error)
         return ""
