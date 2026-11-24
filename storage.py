@@ -12,14 +12,7 @@ MEMOS_FILE = os.path.join(DATA_FOLDER, "memos.csv")
 ARTICLE_FIELDS = ["title", "link", "date", "content", "source"]
 
 
-def ensure_data_folder():
-    """data 폴더가 없으면 만든다."""
-    if not os.path.exists(DATA_FOLDER):
-        os.makedirs(DATA_FOLDER)
-
-
 def load_articles():
-    """CSV 파일에서 기사 목록을 읽는다."""
     articles = []
 
     try:
@@ -35,7 +28,6 @@ def load_articles():
                     "link": row[1],
                     "date": row[2] or "날짜 없음",
                     "content": row[3] or "내용 없음",
-                    # 기존 4열 CSV는 저장 당시 출처가 없었으므로 기본값을 사용한다.
                     "source": row[4] if len(row) >= 5 and row[4] else "기존 저장 기사",
                 }
                 articles.append(article)
@@ -49,7 +41,6 @@ def load_articles():
 
 
 def save_articles(articles):
-    """새 기사를 링크로 비교해 중복 없이 CSV에 추가한다."""
     old_articles = load_articles()
     saved_links = []
 
@@ -70,7 +61,6 @@ def save_articles(articles):
             new_content = str(article.get("content") or "").strip()
             old_content = str(old_article.get("content") or "").strip()
 
-            # 기존 내용이 없고 새로 수집한 본문이 있으면 기존 행만 갱신한다.
             if (
                 new_content
                 and new_content != "내용 없음"
@@ -92,7 +82,6 @@ def save_articles(articles):
         saved_links.append(link)
         changed_count += 1
 
-    ensure_data_folder()
     try:
         with open(ARTICLES_FILE, "w", newline="", encoding="utf-8-sig") as file:
             writer = csv.writer(file)
@@ -115,7 +104,6 @@ def save_articles(articles):
 
 
 def load_keywords():
-    """TXT 파일에서 사용자 키워드를 한 줄씩 읽는다."""
     keywords = []
 
     try:
@@ -134,7 +122,6 @@ def load_keywords():
 
 
 def save_keywords(keywords):
-    """사용자 키워드를 TXT 파일에 한 줄씩 저장한다."""
     clean_keywords = []
 
     for keyword in keywords:
@@ -147,7 +134,6 @@ def save_keywords(keywords):
         if keyword and not duplicate:
             clean_keywords.append(keyword)
 
-    ensure_data_folder()
     try:
         with open(KEYWORDS_FILE, "w", encoding="utf-8") as file:
             for keyword in clean_keywords:
@@ -160,7 +146,6 @@ def save_keywords(keywords):
 
 
 def load_memos():
-    """기사 링크별 학습 메모를 CSV에서 읽는다."""
     memos = {}
 
     try:
@@ -180,8 +165,6 @@ def load_memos():
 
 
 def save_memos(memos):
-    """기사 링크별 학습 메모를 CSV에 저장한다."""
-    ensure_data_folder()
 
     try:
         with open(MEMOS_FILE, "w", newline="", encoding="utf-8-sig") as file:

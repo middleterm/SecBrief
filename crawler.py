@@ -1,10 +1,11 @@
 """RSS와 원문 페이지에서 사이버 보안 기사를 가져오는 모듈."""
 
+import feedparser
+import requests
+
 import html
 import re
 
-import feedparser
-import requests
 from bs4 import BeautifulSoup
 
 
