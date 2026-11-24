@@ -1,5 +1,3 @@
-"""RSS와 원문 페이지에서 사이버 보안 기사를 가져오는 모듈."""
-
 import feedparser
 import requests
 
@@ -13,7 +11,6 @@ from parser import (
 )
 
 
-# 프로젝트에서 사용할 RSS 출처
 RSS_SOURCES = {
     "1": {
         "name": "KISA 보호나라",
@@ -27,7 +24,6 @@ RSS_SOURCES = {
 
 
 def fetch_web_content(url, source=""):
-    """원문 URL에서 HTML을 가져온 뒤 parser에 본문 추출을 맡긴다."""
     try:
         response = requests.get(
             url,
@@ -55,7 +51,6 @@ def fetch_web_content(url, source=""):
 
 
 def refresh_article_contents(articles):
-    """저장된 기사 중 내용이 없는 기사의 본문을 다시 수집한다."""
     updated_count = 0
 
     for article in articles:
@@ -76,7 +71,6 @@ def refresh_article_contents(articles):
 
 
 def fetch_articles(rss_url, limit=10, source="알 수 없는 출처"):
-    """RSS와 원문에서 최대 limit개의 기사를 수집한다."""
     articles = []
     source = str(source or "알 수 없는 출처")
 
@@ -101,14 +95,12 @@ def fetch_articles(rss_url, limit=10, source="알 수 없는 출처"):
             title = clean_content(entry.get("title") or "")
             link = str(entry.get("link") or "").strip()
 
-            # 제목이나 원문 링크가 없는 항목은 저장하지 않는다.
             if not title or not link:
                 continue
 
             date = entry.get("published") or entry.get("updated") or "날짜 없음"
             content = get_rss_content(entry)
 
-            # RSS에 내용이 없을 때만 원문 페이지를 추가로 확인한다.
             if not content:
                 content = fetch_web_content(link, source)
             if not content:

@@ -1,5 +1,3 @@
-"""RSS 항목과 원문 HTML에서 기사 내용을 정리하고 추출하는 모듈."""
-
 import html
 import re
 
@@ -7,7 +5,6 @@ from bs4 import BeautifulSoup
 
 
 def clean_content(text):
-    """HTML 태그와 불필요한 공백을 제거한다."""
     text = html.unescape(str(text))
     text = re.sub(r"<[^>]+>", " ", text)
     text = re.sub(r"\s+", " ", text)
@@ -15,7 +12,6 @@ def clean_content(text):
 
 
 def get_rss_content(entry):
-    """RSS의 summary, description, content 순서로 내용을 찾는다."""
     content_fields = ["summary", "description", "content"]
 
     for field in content_fields:
@@ -39,7 +35,6 @@ def get_rss_content(entry):
 
 
 def remove_unnecessary_tags(soup):
-    """본문과 관계없는 HTML 태그와 영역을 제거한다."""
     remove_names = [
         "script",
         "style",
@@ -88,7 +83,6 @@ def remove_unnecessary_tags(soup):
 
 
 def is_noise_text(text):
-    """본문에 포함하지 않을 메뉴·광고·문의 문구인지 확인한다."""
     noise_words = [
         "광고",
         "문의 사항",
@@ -115,7 +109,6 @@ def is_noise_text(text):
 
 
 def get_main_area(soup):
-    """사이트에서 기사 본문 영역을 우선 선택한다."""
     content_area = soup.select_one(".content_html")
     if content_area is not None:
         return content_area
@@ -132,7 +125,6 @@ def get_main_area(soup):
 
 
 def get_page_lines(soup):
-    """페이지에서 메뉴·광고·문의 문구를 제외한 텍스트 줄을 만든다."""
     remove_unnecessary_tags(soup)
     lines = []
     page_text = get_main_area(soup).get_text("\n")
@@ -148,7 +140,6 @@ def get_page_lines(soup):
 
 
 def is_section_line(line):
-    """KISA 보안 공지의 주요 구역 제목인지 확인한다."""
     section_words = [
         "개요",
         "설명",
@@ -168,11 +159,9 @@ def is_section_line(line):
 
 
 def extract_kisa_content(soup):
-    """KISA 공지에서 개요·설명·영향 제품·해결 방안을 추출한다."""
     remove_unnecessary_tags(soup)
     content_area = soup.select_one(".content_html")
 
-    # 현재 KISA 페이지는 content_html 안에 설명 문단과 제품 표가 있다.
     if content_area is not None:
         result = []
         for item in content_area.find_all(["p", "table"]):
@@ -205,7 +194,6 @@ def extract_kisa_content(soup):
         if result:
             return "\n".join(result)
 
-    # 구조가 다른 KISA 페이지는 제목 줄을 기준으로 한 번 더 찾는다.
     lines = get_page_lines(soup)
     sections = [
         ("개요", ["개요"]),
@@ -250,7 +238,6 @@ def extract_kisa_content(soup):
 
 
 def extract_general_content(soup):
-    """일반 보안 뉴스에서 본문 앞부분 3~5개 문장을 추출한다."""
     lines = get_page_lines(soup)
     paragraphs = []
 
