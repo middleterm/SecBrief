@@ -27,10 +27,10 @@ def load_articles():
                     "title": row[0],
                     "link": row[1],
                     "date": row[2] or "날짜 없음",
-                    "content": row[3] or "내용 없음",
+                    "content": row[3] or "내용 없음",   
                     "source": row[4] if len(row) >= 5 and row[4] else "기존 저장 기사",
                 }
-                articles.append(article)
+                articles.append(article)   
     except FileNotFoundError:
         return []
     except (OSError, csv.Error) as error:
